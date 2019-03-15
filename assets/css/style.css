@@ -1,0 +1,26 @@
+body {
+    font-family: fantasy;
+    background-image: url("../images/background.jpg");
+    background-repeat: repeat;
+}
+
+.clearfix {
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.jumbotron {
+    background-image: url("../images/naturalwhite.png");
+}
+
+.jumbotron h1 {
+    color: cadetblue;
+    font-size: 62px;
+}
+
+#main {
+    background-color: cadetblue;
+    height: 200px;
+    padding: 10px;
+    margin: 0 auto;
+}

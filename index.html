@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Garden Game</title>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- STYLE LINKS -->
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--========== FIX THE STYLE LINK BELOW WHEN FUNCTIONALITY IS WORKING BETTER =========================================-->
+    <link rel="stylesheet" href="/assets/css/style">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="text-center">
+                <h1>GARDEN GAME</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" id="main">
+
+                <div class="row">
+                    <div class="col-3" id="pickedChar">
+                        <div>
+                            <img src="/assets/images/gardener.jpg" alt="" height="100px">
+                        </div>
+                    </div>
+                    <div class="col-3" id="yourHealth">
+                        <div>
+                            <img src="/assets/images/drought.jpg" alt="" height="100px">
+                        </div>
+                    </div>
+                    <div class="col-3" id="yourImage">
+                        <div>
+                            <img src="/assets/images/tomato.jpg" alt="" width="200px">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div>
+                            <img src="/assets/images/clouds.jpeg" alt="" height="100px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5" id="pickedChar">
+                        <p>Picked Character:</p>
+                    </div>
+                    <div class="col-2" id="yourHealth">
+                        <p>Remaing Health</p>
+                    </div>
+                    <div class="col-5" id="yourImage">
+                        <div>
+                            <img src="/assets/images/tomato.jpg" alt="" width="200px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5" id="pickedDef">
+                        <p>Picked Defender:</p>
+                    </div>
+                    <div class="col-2" id="defHealth">
+                        <p>Remaing Health</p>
+                    </div>
+                    <div class="col-5" id="defImage">
+                        <div>
+                            <img src="/assets/images/drought.jpg" alt="" height="110px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5" id="availDef">
+                        <p>Remaining Defenders:</p>
+                    </div>
+                    <div class="col-2" id="availHealth">
+                        <p>Remaing Health</p>
+                    </div>
+                    <div class="col-5" id="availImage">
+                        <div>
+                            <img src="/assets/images/clouds.jpeg" alt="" height="130px">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
