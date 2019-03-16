@@ -8,48 +8,57 @@
     <title>Garden Game</title>
 
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- STYLE LINKS -->
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <!--========== FIX THE STYLE LINK BELOW WHEN FUNCTIONALITY IS WORKING BETTER =========================================-->
-    <link rel="stylesheet" href="/assets/css/style">
+    <link rel="stylesheet" href="/assets/css/style.">
 
 </head>
 
 <body>
     <div class="container">
-        <div class="jumbotron">
+
+        <!--JUMBOTRON-->
+        <!--div class="jumbotron">
             <div class="text-center">
                 <h1>GARDEN GAME</h1>
             </div>
-        </div>
+        </div-->
+
+        <header>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>GARDEN GAME</h1>
+                </div>
+            </div>
+        </header>
 
         <div class="row">
             <div class="col-12" id="main">
 
                 <div class="row" style="padding-bottom: 32px">
-                    <div class="col-3" id="pickedChar">
-                        <div>
-                            <img src="/assets/images/gardener.jpg" alt="" height="100px">
-                        </div>
+                    <div class="col-3" id="gardenerDiv">
+                        <img src="/assets/images/gardener.jpg" class="gardenerImg" alt="gardener" height="100px">
                     </div>
-                    <div class="col-3" id="yourHealth">
-                        <div>
-                            <img src="/assets/images/drought.jpg" alt="" height="100px">
-                        </div>
+                    <div class="col-3" id="tomatoDiv">
+                        <img src="/assets/images/drought.jpg" class="tomato" alt="" height="100px">
                     </div>
-                    <div class="col-3" id="yourImage">
-                        <div>
-                            <img src="/assets/images/tomato.jpg" alt="" width="200px">
-                        </div>
+                    <div class="col-3" id="droughtDiv">
+                        <img src="/assets/images/tomato.jpg" class="drought" alt="" width="200px">
                     </div>
-                    <div class="col-3">
-                        <div>
-                            <img src="/assets/images/clouds.jpeg" alt="" height="100px">
-                        </div>
+                    <div class="col-3" id="cloudsDiv">
+                        <img src="/assets/images/clouds.jpeg" class="clouds" alt="" height="100px">
+                    </div>
+                </div>
+
+<!-- PICK CHARACTER TEXT DIV -->
+                <div class="row" style="padding-bottom: 32px">
+                    <div class="col-12 text-center">
+                        <div id="pick-char"></div>
                     </div>
                 </div>
 
@@ -96,6 +105,10 @@
             </div>
         </div>
     </div>
+
+    <!-- SCRIPT LINK -->
+    <script type="text/javascript" src="/assets/javascript/game.js"></script>
+
 </body>
 
 </html>

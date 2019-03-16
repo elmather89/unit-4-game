@@ -4,6 +4,12 @@ body {
     background-repeat: repeat;
 }
 
+h1 {
+    color: beige;
+    background-color: green;
+    padding: 20px;
+}
+
 .clearfix {
     margin: 0 auto;
     overflow: auto;
@@ -23,4 +29,13 @@ body {
     height: 200px;
     padding: 10px;
     margin: 0 auto;
+}
+
+#pick-char {
+    font-size: 12px;
+    color: beige;
+}
+
+gardenerDiv {
+    background-color: blue;
 }
