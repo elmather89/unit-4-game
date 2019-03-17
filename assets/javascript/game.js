@@ -1,56 +1,147 @@
 $(document).ready(function () {
-    // create variables for 4 characters's health
-    var gardenerHealth = 100;
-    var tomatoHealth = 100;
-    var droughtHealth = 100;
-    var cloudsHealth = 100;
 
-    // create images
-    var gardenerImg = $("#gardenerImg");
-    var tomatoImg = $("#tomato");
-    var droughtImg = $("#drought");
-    var cloudsImg = $("#clouds");
+    // create array of 4 characters ================================================================
+    var characterString = "";
+    var characters = {
+        "gardener": {
+            name: "gardener",
+            health: 200,
+            strength: 50,
+            weakness: 8,
+            imageUrl: "assets/images/gardener.jpg",
+            value: 1
+        },
+        "tomato": {
+            name: "tomato",
+            health: 100,
+            strength: 25,
+            weakness: 12,
+            imageUrl: "assets/images/tomato.jpg",
+            value: 2
+        },
+        "drought": {
+            name: "drought",
+            health: 75,
+            strength: 100,
+            weakness: 50,
+            imageUrl: "assets/images/drought.jpg",
+            value: 3
+        },
+        "clouds": {
+            name: "clouds",
+            health: 75,
+            strength: 75,
+            weakness: 20,
+            imageUrl: "assets/images/clouds.jpg",
+            value: 4
+        }
+    };
+
+    var isChosenCharacter = false;
+    var isChosenEnemy = false;
+    var mainCharacter = "";
+    var mainEnemy = "";
+    var attackResult = "";
 
     // get links for song (ignore for now)
 
-    // ask user to choose a character in pick-char div
-    function charPick() {
-        $("#pick-char").append("<h2>Choose your character!</h2>");
+    // funciton to initialize the game and allows reset ==================================================
+    function initializeGame() {
+
+        characters = {
+            "gardener": {
+                name: "gardener",
+                health: "",
+                strength: "",
+                weakness: "",
+                imageUrl: "assets/images/gardener.jpg"
+            },
+            "tomato": {
+                name: "tomato",
+                health: "",
+                strength: "",
+                weakness: "",
+                imageUrl: "assets/images/tomato.jpg"
+            },
+            "drought": {
+                name: "drought",
+                health: "",
+                strength: "",
+                weakness: "",
+                imageUrl: "assets/images/drought.jpg"
+            },
+            "clouds": {
+                name: "clouds",
+                health: "",
+                strength: "",
+                weakness: "",
+                imageUrl: "assets/images/clouds.jpg"
+            }
+        };
+
+        isChosenCharacter = false;
+        isChosenEnemy = false;
+        mainCharacter = "";
+        mainEnemy = "";
+        attackResult = "";
+
+        // empty divs
+        $("#gardenerDiv, #tomatoDiv, #droughtDiv, #cloudsDiv").empty();
     };
-    charPick();
 
-    // on click event
-    var counter = 0;
-    function gardenerFunc() {
-        $(".gardenerImg").one("click", function () {
-            counter++;
-            if (counter === 1)
-            $("#yourHealth").append("<p>" + gardenerHealth + "</p>");
-        });
-    };
-    gardenerFunc();
+    // dynamically create characters ========================== NOT WORKING YET ========================================
+    for (var nameProp in characters) {
+        characterString  += characters[nameProp];
+    }
+    console.log(characterString);
+    
+    /*for (var i = 0; i < characters.length; i++) {
+        var charButton = $("<button>");
+        charButton.addClass("characters characters-name character-button");
+        charButton.text(characters[i].name);
+        $(".selectionArea").append(charButton);
+        console.log(charButton);
+    }*/
 
+    // (1a) on click function for character ==============================================================
+    $(".selectionArea").on("click", function () {
+        // make sure character has not been chosen
+        if (isChosenCharacter) {
+            alert("test");
+        }
 
-    // move to pickedChar div
-    $(".gardenerImg").click(function () {
-        $(".gardenerImg").appendTo("#pickedChar");
-        // $(this).hide(); // Hide gardenerImg
+        // if character is chosen and enemy isn't,
+        // designate this click as the enemy
+        if (isChosenEnemy) {
+            mainEnemy += $(this).val();
+            $("#pickedDef").text(mainEnemy);
+        }
+
+        else {
+            mainCharacter = isChosenCharacter + $(this).val();
+            $("#pickedChar").text(mainCharacter);
+            console.log(mainCharacter);
+        }
     });
 
-    // show remaining health in pickedChar div
+    // (1b) on click for attack button ==================================================================
+    $("#pick-char").on("click", function () {
+        if (!isChosenCharacter || isChosenEnemy) {
+            return false;
+        }
 
-    // ask user to pick an enemy
-    // show remaing health in pickedDef div
+        isChosenCharacter = true;
 
-    // move to picked enemyDiv
+        // need to store the health value of character,
+        // but this doesn't look correct yet....
+        mainCharacter = $(this).val();
+        $("#pick-char").text($(this).text());
 
-    // move remaining characters to remainingChar div
+    });
 
-    // generate an attach button that shows up in first div AFTER all characters are moved
+    // (1c) on click, hook up div values to array? ======================================================
+    // define where isChosenCharacter is true?
+    $(".")
 
-    // 
-
-
-
-    //code goes above
-})
+    // end of doc ready code below
+});

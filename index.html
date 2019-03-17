@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <!--========== FIX THE STYLE LINK BELOW WHEN FUNCTIONALITY IS WORKING BETTER =========================================-->
-    <link rel="stylesheet" href="/assets/css/style.">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
 
@@ -40,18 +40,16 @@
         <div class="row">
             <div class="col-12" id="main">
 
-                <div class="row" style="padding-bottom: 32px">
-                    <div class="col-3" id="gardenerDiv">
-                        <img src="/assets/images/gardener.jpg" class="gardenerImg" alt="gardener" height="100px">
+                <div class="row selectionArea" style="padding-bottom: 32px">
+                    <div class="col-3 characters-div" id="gardenerDiv" value="1"></div>
+                    <div class="col-3 characters-div" id="tomatoDiv" value="2">
+                        <img src="/assets/images/drought.jpg" class="character-div tomato" alt="" height="100px" value="2">
                     </div>
-                    <div class="col-3" id="tomatoDiv">
-                        <img src="/assets/images/drought.jpg" class="tomato" alt="" height="100px">
+                    <div class="col-3 characters-div" id="droughtDiv" value="3">
+                        <img src="/assets/images/tomato.jpg" class="character-div drought" alt="" width="200px" value="3">
                     </div>
-                    <div class="col-3" id="droughtDiv">
-                        <img src="/assets/images/tomato.jpg" class="drought" alt="" width="200px">
-                    </div>
-                    <div class="col-3" id="cloudsDiv">
-                        <img src="/assets/images/clouds.jpeg" class="clouds" alt="" height="100px">
+                    <div class="col-3 characters-div" id="cloudsDiv"  value="4">
+                        <img src="/assets/images/clouds.jpeg" class="character-div clouds" alt="" height="100px" value="4">
                     </div>
                 </div>
 
@@ -63,8 +61,8 @@
                 </div>
 
                 <div class="row" style="padding-bottom: 32px">
-                    <div class="col-5" id="pickedChar">
-                        <p>Picked Character:</p>
+                    <div class="col-5">
+                        <div id="pickedChar"></div>
                     </div>
                     <div class="col-2" id="yourHealth">
                         <p>Remaing Health</p>
