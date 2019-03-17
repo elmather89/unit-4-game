@@ -95,21 +95,21 @@ $(document).ready(function () {
         $("#gardenerDiv, #tomatoDiv, #droughtDiv, #cloudsDiv").empty();
     };
 
-    // dynamically create characters ========================== NOT WORKING YET ========================================
+    // dynamically create characters ======================================================================
     for (var i = 0; i < allCharacters.length; i++) {
         var charButton = $("<button>");
         charButton.text(allCharacters[i].name);
         if (allCharacters[i].name === "gardener") {
-            charButton.addClass("gardenerImg");
+            charButton.addClass("characters gardenerImg");
         }
         if (allCharacters[i].name === "tomato") {
-            charButton.addClass("tomatoImg");
+            charButton.addClass("characters tomatoImg");
         }
         if (allCharacters[i].name === "drought") {
-            charButton.addClass("droughtImg");
+            charButton.addClass("characters ");
         }
         if (allCharacters[i].name === "clouds") {
-            charButton.addClass("cloudsImg");
+            charButton.addClass("characters cloudsImg");
         }
         $(".selectionArea").append(charButton);
         console.log(charButton);

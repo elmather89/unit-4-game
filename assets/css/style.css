@@ -36,10 +36,15 @@ h1 {
     color: beige;
 }
 
-.gardenerDiv {
-    background-color: cornflowerblue;
+.selectionArea {
+    margin: 0 auto;
+    padding: 10px;
+    overflow: auto;
 }
 
+.clearfix {
+    overflow: auto;
+}
 
 .gardenerImg {
     background-image: url("/assets/images/gardener.jpg");
@@ -58,8 +63,8 @@ h1 {
 }
 
 .characters {
-    width: 100px;
-    height: 50px;
+    width: 200px;
+    height: 200px;
     border-style: solid;
     padding: 2px;
     float: left;
