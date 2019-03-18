@@ -96,6 +96,7 @@ $(document).ready(function () {
     };
 
     // dynamically create characters ======================================================================
+    // cannot get 
     for (var i = 0; i < allCharacters.length; i++) {
         var charButton = $("<div>");
         charButton.text(allCharacters[i].name);
