@@ -87,8 +87,8 @@ $(document).ready(function () {
         };
         isChosenCharacter = false;
         isChosenEnemy = false;
-        mainCharacter = "";
-        mainEnemy = "";
+        mainCharacter = 0; // ================================================================ < change back to ""
+        mainEnemy = 0;
         attackResult = "";
 
         // empty divs
@@ -96,9 +96,9 @@ $(document).ready(function () {
     };
 
     // dynamically create characters ======================================================================
-    // cannot get 
+    // cannot get this to hook up 
     for (var i = 0; i < allCharacters.length; i++) {
-        var charButton = $("<div>");
+        var charButton = $("<button>");
         charButton.text(allCharacters[i].name);
         if (allCharacters[i].name === "gardener") {
             charButton.addClass("col-3 characters gardenerImg");
@@ -119,18 +119,14 @@ $(document).ready(function () {
         $(".selectionArea").append(charButton);
     }
 
-    // create attack button
-    if (isChosenEnemy) {
-        var attackBtn = $("<button>");
-        attackBtn.text("Attack!");
-        $("attack-div").append(attackBtn);
-        console.log(attackBtn);
-    }
+    // can't figure out how to mark the clicked character buttons
+    // as isChosenCharacter or isChosenEnemy
+
 
     // (1a) on click function for character ==============================================================
     $(".characters").on("click", function () {
         // make sure character has not been chosen
-        if (isChosenCharacter) {
+        if (isChosenCharacter || isChosenEnemy) {
             return false;
         }
 
@@ -138,19 +134,21 @@ $(document).ready(function () {
         // designate this click as the enemy
         if (isChosenEnemy) {
             mainEnemy += $(this).val();
-            $("#pickedDef").text(mainEnemy);
+            $("#pickedDef").text($(this).val());
         }
 
         else {
             mainCharacter += $(this).val();
-            $("#pickedChar").text(mainCharacter);
+            isChosenCharacter = true;
+            $("#pickedChar").text($(mainCharacter).text());
+            console.log(mainCharacter);
         }
     });
 
     // (1b) on click for enemy ==================================================================
-    $("#pickedChar").on("click", function () {
+    $(".characters").on("click", function () {
         // check that first character has been selected
-        if (!isChosenCharacter || isChosenEnemy) {
+        if (!isChosenCharacter) {
             return false;
         }
 
@@ -159,15 +157,60 @@ $(document).ready(function () {
 
         // store value......
         mainEnemy = $(this).val();
-        console.log(this);
 
         // set html of pickedDef to the text of what was clicked
         $("#pickedDef").text($(this).text());
+    });
+
+    // create attack button
+    if (isChosenEnemy) {
+        var attackBtn = $("<button>");
+        attackBtn.text("Attack!");
+        $("attack-div").append(attackBtn);
+        console.log(attackBtn);
+    }
+
+    // (1c) on click, hook up div values to array? ======================================================
+    $(".equal").on("click", function () {
+
+        // If we already clicked equal, don't do the calculation again
+        if (isCalculated) {
+            return false;
+        }
+
+        // Set isCalculated to true so that we don't get in a weird UI state by clicking buttons again
+        isCalculated = true;
+
+        // Use parseInt to convert our string representation of numbers into actual integers
+        firstNumber = parseInt(firstNumber);
+        secondNumber = parseInt(secondNumber);
+
+        // Based on the operator that was chosen.
+        // Then run the operation and set the HTML of the result of that operation
+        if (operator === "plus") {
+            result = firstNumber + secondNumber;
+        }
+
+        else if (operator === "minus") {
+            result = firstNumber - secondNumber;
+        }
+
+        else if (operator === "times") {
+            result = firstNumber * secondNumber;
+        }
+
+        else if (operator === "divide") {
+            result = firstNumber / secondNumber;
+        }
+
+        else if (operator === "power") {
+            result = Math.pow(firstNumber, secondNumber);
+        }
+
+        $("#result").text(result);
 
     });
 
-    // (1c) on click, hook up div values to array? ======================================================
-    $("#")
 
     // define where isChosenCharacter is true?
     $(".")

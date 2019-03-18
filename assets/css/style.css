@@ -6,7 +6,7 @@ body {
 
 h1 {
     color: beige;
-    background-color: green;
+    background-color: rgba(95, 157, 159, 0.9);
     padding: 30px;
     font-family: fantasy;
     font-size: 50px;
@@ -17,10 +17,6 @@ h1 {
     overflow: auto;
 }
 
-.jumbotron {
-    background-image: url("../images/naturalwhite.png");
-}
-
 .jumbotron h1 {
     color: cadetblue;
     font-size: 62px;
@@ -28,7 +24,7 @@ h1 {
 
 #main {
     background-color: cadetblue;
-    height: 200px;
+    height: auto;
     padding: 10px;
     margin: 0 auto;
 }
@@ -43,7 +39,7 @@ h1 {
     height: auto;
     padding: 10px;
     clear: left;
-    background-color: cornflowerblue;
+    background-color: rgba(95, 157, 159);
     overflow: auto;
 }
 
@@ -52,13 +48,13 @@ h1 {
 }
 
 .gardenerImg {
-    background-image: url("/assets/images/gardener.jpg");
+    background-image: url("../images/gardener.jpg");
     background-repeat: no-repeat;
     background-size: 400px;
 }
 
 .tomatoImg {
-    background-image: url("/assets/images/tomato.jpg");
+    background-image: url("../images/tomato.jpg");
     background-repeat: no-repeat;
     background-size: 300px;
     padding: 20px;
@@ -66,13 +62,13 @@ h1 {
 }
 
 .droughtImg {
-    background-image: url("/assets/images/drought.jpg");
+    background-image: url("../images/drought.jpg");
     background-repeat: no-repeat;
     background-size: 300px;
 }
 
 .cloudsImg {
-    background-image: url("/assets/images/clouds.jpeg");
+    background-image: url("../images/clouds.jpeg");
     background-repeat: no-repeat;
     background-size: 270px;
 }
