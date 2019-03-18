@@ -28,8 +28,8 @@ $(document).ready(function () {
         value: 3
     };
 
-    var clouds = {
-        name: "clouds",
+    var cloud = {
+        name: "cloud",
         health: 75,
         strength: 75,
         weakness: 20,
@@ -37,7 +37,7 @@ $(document).ready(function () {
         value: 4
     };
 
-    var allCharacters = [gardener, tomato, drought, clouds];
+    var allCharacters = [gardener, tomato, drought, cloud];
 
     var isChosenCharacter = false;
     var isChosenEnemy = false;
@@ -77,8 +77,8 @@ $(document).ready(function () {
             value: 3
         };
 
-        var clouds = {
-            name: "clouds",
+        var cloud = {
+            name: "cloud",
             health: "",
             strength: "",
             weakness: "",
@@ -97,31 +97,40 @@ $(document).ready(function () {
 
     // dynamically create characters ======================================================================
     for (var i = 0; i < allCharacters.length; i++) {
-        var charButton = $("<button>");
+        var charButton = $("<div>");
         charButton.text(allCharacters[i].name);
         if (allCharacters[i].name === "gardener") {
-            charButton.addClass("characters gardenerImg");
+            charButton.addClass("col-3 characters gardenerImg");
+            charButton.attr("data-letter", allCharacters[i].name);
         }
         if (allCharacters[i].name === "tomato") {
-            charButton.addClass("characters tomatoImg");
+            charButton.addClass("col-3 characters tomatoImg");
+            charButton.attr("data-letter", allCharacters[i].name);
         }
         if (allCharacters[i].name === "drought") {
-            charButton.addClass("characters ");
+            charButton.addClass("col-3 characters droughtImg");
+            charButton.attr("data-letter", allCharacters[i].name);
         }
-        if (allCharacters[i].name === "clouds") {
-            charButton.addClass("characters cloudsImg");
+        if (allCharacters[i].name === "cloud") {
+            charButton.addClass("col-3 characters cloudsImg");
+            charButton.attr("data-letter", allCharacters[i].name);
         }
         $(".selectionArea").append(charButton);
-        console.log(charButton);
     }
 
-
+    // create attack button
+    if (isChosenEnemy) {
+        var attackBtn = $("<button>");
+        attackBtn.text("Attack!");
+        $("attack-div").append(attackBtn);
+        console.log(attackBtn);
+    }
 
     // (1a) on click function for character ==============================================================
-    $(".selectionArea").on("click", function () {
+    $(".characters").on("click", function () {
         // make sure character has not been chosen
         if (isChosenCharacter) {
-            alert("test");
+            return false;
         }
 
         // if character is chosen and enemy isn't,
@@ -132,28 +141,33 @@ $(document).ready(function () {
         }
 
         else {
-            mainCharacter = isChosenCharacter + $(this).val();
+            mainCharacter += $(this).val();
             $("#pickedChar").text(mainCharacter);
-            console.log(mainCharacter);
         }
     });
 
-    // (1b) on click for attack button ==================================================================
-    $("#pick-char").on("click", function () {
+    // (1b) on click for enemy ==================================================================
+    $("#pickedChar").on("click", function () {
+        // check that first character has been selected
         if (!isChosenCharacter || isChosenEnemy) {
             return false;
         }
 
-        isChosenCharacter = true;
+        // set enemy as chosen, so attack button can write
+        isChosenEnemy = true;
 
-        // need to store the health value of character,
-        // but this doesn't look correct yet....
-        mainCharacter = $(this).val();
-        $("#pick-char").text($(this).text());
+        // store value......
+        mainEnemy = $(this).val();
+        console.log(this);
+
+        // set html of pickedDef to the text of what was clicked
+        $("#pickedDef").text($(this).text());
 
     });
 
     // (1c) on click, hook up div values to array? ======================================================
+    $("#")
+
     // define where isChosenCharacter is true?
     $(".")
 

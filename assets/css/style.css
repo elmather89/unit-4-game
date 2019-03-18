@@ -1,5 +1,5 @@
 body {
-    font-family: fantasy;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-image: url("../images/background.jpg");
     background-repeat: repeat;
 }
@@ -7,7 +7,9 @@ body {
 h1 {
     color: beige;
     background-color: green;
-    padding: 20px;
+    padding: 30px;
+    font-family: fantasy;
+    font-size: 50px;
 }
 
 .clearfix {
@@ -37,8 +39,11 @@ h1 {
 }
 
 .selectionArea {
-    margin: 0 auto;
+    width: 100%;
+    height: auto;
     padding: 10px;
+    clear: left;
+    background-color: cornflowerblue;
     overflow: auto;
 }
 
@@ -48,27 +53,39 @@ h1 {
 
 .gardenerImg {
     background-image: url("/assets/images/gardener.jpg");
+    background-repeat: no-repeat;
+    background-size: 400px;
 }
 
 .tomatoImg {
     background-image: url("/assets/images/tomato.jpg");
+    background-repeat: no-repeat;
+    background-size: 300px;
+    padding: 20px;
+    float: right;
 }
 
 .droughtImg {
     background-image: url("/assets/images/drought.jpg");
+    background-repeat: no-repeat;
+    background-size: 300px;
 }
 
 .cloudsImg {
     background-image: url("/assets/images/clouds.jpeg");
+    background-repeat: no-repeat;
+    background-size: 270px;
 }
 
 .characters {
-    width: 200px;
-    height: 200px;
-    border-style: solid;
-    padding: 2px;
-    float: left;
-    margin: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+    color: beige;
+    font-size: 30px;
+    width: 150px;
+    height: 150px;
+    padding: 45px;
 }
 
 .character-name {
