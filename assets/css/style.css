@@ -29,10 +29,9 @@ h1 {
     margin: 0 auto;
 }
 
-#pick-char {
-    font-size: 12px;
-    color: beige;
-}
+/* #pick-char {
+    max-width: 20px;
+} */
 
 .selectionArea {
     width: 100%;
@@ -51,6 +50,7 @@ h1 {
     background-image: url("../images/gardener.jpg");
     background-repeat: no-repeat;
     background-size: 400px;
+    float: left;
 }
 
 .tomatoImg {
@@ -58,19 +58,21 @@ h1 {
     background-repeat: no-repeat;
     background-size: 300px;
     padding: 20px;
-    float: right;
+    float: left;
 }
 
 .droughtImg {
     background-image: url("../images/drought.jpg");
     background-repeat: no-repeat;
     background-size: 300px;
+    float: left;
 }
 
 .cloudsImg {
     background-image: url("../images/clouds.jpeg");
     background-repeat: no-repeat;
     background-size: 270px;
+    float: left;
 }
 
 .characters {

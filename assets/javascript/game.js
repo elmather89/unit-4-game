@@ -87,8 +87,8 @@ $(document).ready(function () {
         };
         isChosenCharacter = false;
         isChosenEnemy = false;
-        mainCharacter = 0; // ================================================================ < change back to ""
-        mainEnemy = 0;
+        mainCharacter = "";
+        mainEnemy = "";
         attackResult = "";
 
         // empty divs
@@ -96,7 +96,6 @@ $(document).ready(function () {
     };
 
     // dynamically create characters ======================================================================
-    // cannot get this to hook up 
     for (var i = 0; i < allCharacters.length; i++) {
         var charButton = $("<button>");
         charButton.text(allCharacters[i].name);
@@ -125,6 +124,8 @@ $(document).ready(function () {
 
     // (1a) on click function for character ==============================================================
     $(".characters").on("click", function () {
+        var playerOne = $(this);
+
         // make sure character has not been chosen
         if (isChosenCharacter || isChosenEnemy) {
             return false;
@@ -141,7 +142,10 @@ $(document).ready(function () {
             mainCharacter += $(this).val();
             isChosenCharacter = true;
             $("#pickedChar").text($(mainCharacter).text());
-            console.log(mainCharacter);
+            // playerOne.animate({ top: "-20px", left: "10px" }, "normal");
+            $("#pickedChar").prepend(playerOne);
+            // playerOne.addClass("#pick-char");
+            console.log(playerOne);
         }
     });
 
