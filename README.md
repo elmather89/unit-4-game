@@ -3,6 +3,6 @@ This is an interactive web browser game. The user chooses a character by clickin
 
 ### Built with:
 * Javascript / jQuery
-* Dynamically rendered HTML
+* Dynamically updated HTML
 
 ### See the published app here: [Garden Game](https://elmather89.github.io/unit-4-game/)
